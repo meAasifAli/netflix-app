@@ -117,11 +117,15 @@ export default function Dashboard() {
       const response = await fetch(url, options);
       const data = await response.json();
       if (response.ok) {
-        setTrending(data.results);
+        setTrending(data.results); 
+        console.log("hello");
       }
     };
     fetchMovies();
   }, []);
+
+ 
+  
   useEffect(() => {
     const fetchMovies = async () => {
       const url = `https://api.themoviedb.org/3/tv/on_the_air?language=en-US&page=1`;
